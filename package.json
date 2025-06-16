@@ -1,0 +1,15 @@
+{
+  "name": "starlight-site",
+  "version": "1.0.0",
+  "description": "Sitio estático de Starlight servido por Node/Express para Heroku",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
