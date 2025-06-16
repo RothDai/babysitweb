@@ -1,0 +1,64 @@
+:root {
+  --primary: #342c83;
+  --primary-light: #4d46a0;
+  --primary-dark: #241d6a;
+  --accent: #f4d484;
+  --accent-light: #fae8b3;
+  --background: #fbf4f3;
+  --background-alt: #f5eae8;
+  --text: #4a4b7a;
+  --text-light: #7374a9;
+  --card-bg: #ffffff;
+  --light-bg: #f8e5ac;
+  --dark-text: #342c83;
+  --transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  --max-width: 1200px;
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.16);
+  --border-radius: 16px;
+  --gradient: linear-gradient(135deg, var(--primary), var(--primary-light));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-text);
+  background: var(--background);
+  overflow-x: hidden;
+  line-height: 1.7;
+  touch-action: manipulation;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-alt {
+  background: var(--background-alt);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}

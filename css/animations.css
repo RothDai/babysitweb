@@ -1,0 +1,96 @@
+/* Animaciones y transiciones generales */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Scroll down animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+  40% { transform: translateY(-20px) translateX(-50%); }
+  60% { transform: translateY(-10px) translateX(-50%); }
+}
+
+.scroll-down {
+  animation: bounce 2s infinite;
+}
+
+/* Card hover animations */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Team card hover animations */
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-card:hover .team-img {
+  transform: scale(1.05);
+}
+
+/* Button hover animations */
+.btn:hover:before {
+  width: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  background: var(--accent-light);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Social link animations */
+.social-links a:hover {
+  background: var(--accent);
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* Form focus animations */
+input:focus, textarea:focus {
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 0 3px rgba(244, 212, 132, 0.3);
+}
+
+/* Submit button animations */
+button[type=submit]:hover {
+  background: var(--accent-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Social icon animations in footer */
+.social-icons a:hover {
+  background: var(--accent);
+  color: var(--primary);
+  transform: translateY(-5px);
+}
+
+/* FAQ animation */
+.faq-question i {
+  transition: transform var(--transition);
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+  padding: 20px;
+  max-height: 500px;
+}
+
+/* Mobile touch feedback */
+.card, .team-card, .btn {
+  transition: all 0.3s ease;
+}
+
+/* Se elimina :active para manejar transformación en JS y mejor performance */

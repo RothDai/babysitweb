@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Viewport responsivo; no limitar zoom -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starlight - Brillante cuidado infantil</title>
+  <!-- GSAP Core + Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+  <!-- Swiper Carousel -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Nuestros estilos modulares -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation">
+    <a href="#" class="logo">
+      <i class="fas fa-star" aria-hidden="true"></i>
+      <span>Starlight</span>
+    </a>
+    <button class="hamburger" aria-label="Abrir menú" type="button">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="nav-links" aria-hidden="true">
+      <button class="close-menu" aria-label="Cerrar menú" type="button">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <a href="#hero" class="active">Inicio</a>
+      <a href="#quienes">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#precios">Precios</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#faqs">FAQs</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <!-- Canvas para la animación de estrellas en Hero -->
+    <canvas id="stars-canvas" aria-hidden="true"></canvas>
+    
+    <div class="hero-content">
+      <h1><span id="typed" aria-live="polite"></span></h1>
+      <p class="hero-subtitle">Brillante... como el cuidado que le damos a tus hijos.</p>
+      <div class="hero-buttons">
+        <a href="#servicios" class="btn">Nuestros Servicios</a>
+        <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
+      </div>
+    </div>
+    <div class="scroll-down" aria-hidden="true">
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      <span>Desplázate</span>
+    </div>
+  </section>
+
+  <!-- Quiénes Somos -->
+  <section id="quienes">
+    <div class="container">
+      <div class="section-title">
+        <h2>Sobre Nosotros</h2>
+        <p>En Starlight nos dedicamos a ofrecer cuidado infantil de alta calidad y personalizado en eventos sociales y situaciones especiales, con un fuerte compromiso con la sostenibilidad ambiental.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card animate-on-scroll">
+          <h3>Misión</h3>
+          <p>
+            Nuestra misión es proporcionar un servicio de cuidado infantil de alta calidad y personalizado en eventos sociales, permitiendo que los padres disfruten de momentos especiales mientras sus hijos están en manos de profesionales capacitados y cariñosos. Nos comprometemos a crear un entorno seguro, divertido y estimulante para los niños, y a brindar tranquilidad y confianza a los padres. Además, nos esforzamos por minimizar nuestro impacto ambiental y promover prácticas sostenibles en nuestros servicios y operaciones.
+          </p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3>Visión</h3>
+          <p>
+            Ser la agencia de niñeras más confiable y reconocida a nivel Querétaro y zona metropolitana, conocida por nuestra excelencia en el cuidado infantil, nuestro compromiso con la satisfacción de los padres y nuestra responsabilidad ambiental. Queremos ser la opción preferida para los eventos sociales más importantes, y ser reconocidos como líderes en la industria del cuidado infantil. Nos esforzamos por crear un impacto positivo en la vida de los niños y las familias que servimos, y por ser un ejemplo de excelencia en el cuidado infantil y la sostenibilidad ambiental.
+          </p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3>Valores</h3>
+          <ul>
+            <li>CONFIANZA</li>
+            <li>PROFESIONALISMO</li>
+            <li>COMUNICACIÓN EFECTIVA</li>
+            <li>RESPONSABILIDAD</li>
+            <li>COMPROMISO</li>
+            <li>SEGURIDAD</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="bg-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nuestros Servicios</h2>
+        <p>Ofrecemos soluciones de cuidado infantil adaptadas a tus necesidades, con personal especializado y prácticas sostenibles.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card animate-on-scroll">
+          <h3><i class="fas fa-child" aria-hidden="true"></i> Niñeras Tradicionales</h3>
+          <p>
+            Nuestras niñeras tradicionales son profesionales del cuidado infantil con experiencia práctica en el acompañamiento diario de niños y niñas de diferentes edades. Su enfoque se centra en la atención afectiva, la organización de rutinas y la seguridad de los pequeños.
+          </p>
+          <h4>Funciones principales:</h4>
+          <ul>
+            <li>Supervisión y acompañamiento en el hogar o en salidas.</li>
+            <li>Preparación y administración de alimentos según indicaciones familiares.</li>
+            <li>Apoyo en higiene personal, cambio de pañales y control de esfínteres.</li>
+            <li>Organización de juegos, actividades recreativas y tareas escolares básicas.</li>
+            <li>Mantenimiento de un entorno seguro, limpio y ordenado para el niño.</li>
+          </ul>
+          <h4>Perfil ideal para familias que buscan:</h4>
+          <ul>
+            <li>Apoyo constante o temporal para el cuidado cotidiano.</li>
+            <li>Flexibilidad horaria.</li>
+            <li>Una figura cariñosa, responsable y comprometida con el bienestar del niño.</li>
+          </ul>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3><i class="fas fa-baby" aria-hidden="true"></i> Puericultistas</h3>
+          <p>
+            Las puericultistas son especialistas formadas en el desarrollo físico, emocional, cognitivo y social del niño desde su nacimiento hasta los primeros años de vida. Su rol va más allá del cuidado básico: integran conocimientos de salud, estimulación y crianza respetuosa.
+          </p>
+          <h4>Funciones principales:</h4>
+          <ul>
+            <li>Evaluación y acompañamiento en el desarrollo evolutivo infantil.</li>
+            <li>Estimulación temprana a través de juegos sensoriales y actividades adaptadas por edad.</li>
+            <li>Asesoramiento en temas de lactancia, sueño infantil, alimentación complementaria y crianza.</li>
+            <li>Prevención de riesgos y promoción de hábitos saludables.</li>
+            <li>Comunicación constante con los padres para brindar seguimiento personalizado.</li>
+          </ul>
+          <h4>Perfil ideal para familias que buscan:</h4>
+          <ul>
+            <li>Enfoque más técnico y especializado en la primera infancia.</li>
+            <li>Apoyo durante el posparto, lactancia y primeros años.</li>
+            <li>Acompañamiento integral en el crecimiento del niño, desde un enfoque profesional y afectivo.</li>
+          </ul>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3><i class="fas fa-birthday-cake" aria-hidden="true"></i> Renta de Inflable</h3>
+          <p>
+            Ofrecemos renta de inflable para tus eventos: dimensiones 554 cm (largo) x 243 cm (alto). Incluye transporte e instalación, para que los niños disfruten de una atracción segura y entretenida.
+          </p>
+          <ul>
+            <li>Dimensiones: 554 cm x 243 cm.</li>
+            <li>Incluye transporte e instalación.</li>
+            <li>Materiales seguros y limpios.</li>
+            <li>Acompañamiento y supervisión opcional por parte de nuestro personal.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precios y Horarios -->
+  <section id="precios">
+    <div class="container">
+      <div class="section-title">
+        <h2>Horarios y Costos</h2>
+        <p>Consulta nuestras tarifas según el tipo de servicio y horario.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card animate-on-scroll">
+          <h3><i class="fas fa-sun" aria-hidden="true"></i> Diurno (7am - 7pm)</h3>
+          <p><strong>Niñera Tradicional:</strong> $150 MXN por hora o $8,000 MXN al mes.</p>
+          <p><strong>Puericultista:</strong> $300 MXN por hora o $10,000 MXN al mes.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3><i class="fas fa-moon" aria-hidden="true"></i> Nocturno (7pm - 7am)</h3>
+          <p><strong>Niñera Tradicional:</strong> $250 MXN por hora.</p>
+          <p><strong>Puericultista:</strong> $400 MXN por hora.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3><i class="fas fa-gift" aria-hidden="true"></i> Renta de Inflable</h3>
+          <p><strong>Costo:</strong> $1,800 MXN (incluye transporte e instalación).</p>
+          <p><em>Dimensiones:</em> 554 cm (largo) x 243 cm (alto).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo -->
+  <section id="equipo">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nuestro Equipo</h2>
+        <p>Profesionales dedicados al cuidado infantil y la sostenibilidad.</p>
+      </div>
+      <div class="grid-3">
+        <div class="team-card animate-on-scroll">
+          <div class="team-content">
+            <div class="team-initials" aria-hidden="true">HA</div>
+            <h3>Abner Leonel Huerta Rico</h3>
+            <p>Niñera / Puericultista</p>
+            <div class="social-links">
+              <a href="https://instagram.com/abner.leo.4" target="_blank" rel="noopener" aria-label="Instagram de Abner Leonel Huerta Rico"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="team-card animate-on-scroll">
+          <div class="team-content">
+            <div class="team-initials" aria-hidden="true">MK</div>
+            <h3>Kevin Mendoza Hernández</h3>
+            <p>Niñero / Puericultor</p>
+            <div class="social-links">
+              <a href="https://instagram.com/ferras3782.m.l" target="_blank" rel="noopener" aria-label="Instagram de Kevin Mendoza Hernández"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="team-card animate-on-scroll">
+          <div class="team-content">
+            <div class="team-initials" aria-hidden="true">PJ</div>
+            <h3>Jazmín Palomares Trejo</h3>
+            <p>Puericultista</p>
+            <div class="social-links">
+              <a href="https://instagram.com/jazminptrejo" target="_blank" rel="noopener" aria-label="Instagram de Jazmín Palomares Trejo"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="team-card animate-on-scroll">
+          <div class="team-content">
+            <div class="team-initials" aria-hidden="true">PK</div>
+            <h3>Kerla Christelle Patrón Tinoco</h3>
+            <p>Niñera / Coordinadora de Eventos</p>
+            <div class="social-links">
+              <a href="https://instagram.com/kidoor.k" target="_blank" rel="noopener" aria-label="Instagram de Kerla Christelle Patrón Tinoco"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="team-card animate-on-scroll">
+          <div class="team-content">
+            <div class="team-initials" aria-hidden="true">RS</div>
+            <h3>Sara Fernanda Rojas Martínez</h3>
+            <p>Especialista en Seguridad Infantil</p>
+            <div class="social-links">
+              <a href="https://instagram.com/_sara.rojasss_" target="_blank" rel="noopener" aria-label="Instagram de Sara Fernanda Rojas Martínez"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="team-card animate-on-scroll">
+          <div class="team-content">
+            <div class="team-initials" aria-hidden="true">VL</div>
+            <h3>Lizbeth Velázquez Lagunas</h3>
+            <p>Coordinadora de Sostenibilidad</p>
+            <div class="social-links">
+              <a href="https://instagram.com/liz9vela" target="_blank" rel="noopener" aria-label="Instagram de Lizbeth Velázquez Lagunas"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" class="bg-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Lo Que Dicen Nuestros Clientes</h2>
+        <p>La satisfacción de las familias que confían en Starlight es nuestro mayor orgullo.</p>
+      </div>
+      <div class="swiper testimonial-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial">
+              <p>"El servicio de Starlight fue excepcional en nuestra boda. Los niños disfrutaron muchísimo y los padres pudimos relajarnos. Muy profesionales y atentos."</p>
+              <footer>
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Opinión de Familia Ramírez" class="testimonial-avatar">
+                <div class="testimonial-author">
+                  <h4>Familia Ramírez</h4>
+                  <p>Padres de Sofía, 3 años</p>
+                </div>
+              </footer>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial">
+              <p>"Contratamos Starlight para un evento corporativo con área infantil. El equipo cuidó a los niños con excelente organización y cariño. ¡Recomendados!"</p>
+              <footer>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Opinión de Familia Torres" class="testimonial-avatar">
+                <div class="testimonial-author">
+                  <h4>Familia Torres</h4>
+                  <p>Evento familiar</p>
+                </div>
+              </footer>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial">
+              <p>"Las puericultistas de Starlight nos apoyaron después del nacimiento de nuestro bebé. Su asesoría en lactancia y rutinas fue muy valiosa. Agradecidos."</p>
+              <footer>
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Opinión de Familia Hernández" class="testimonial-avatar">
+                <div class="testimonial-author">
+                  <h4>Familia Hernández</h4>
+                  <p>Madre de Diego, 5 años</p>
+                </div>
+              </footer>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial">
+              <p>"Muy satisfechos con la niñera tradicional durante el evento. Puntual, atenta y con excelente comunicación. Sin duda volveremos a contratar."</p>
+              <footer>
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Opinión de Familia García" class="testimonial-avatar">
+                <div class="testimonial-author">
+                  <h4>Familia García</h4>
+                  <p>Padres de Lucas, 4 años</p>
+                </div>
+              </footer>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial">
+              <p>"Servicio de emergencia en un cumpleaños sorpresa: Starlight respondió rápido y cuidó a los niños sin problemas. Muy profesional."</p>
+              <footer>
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Opinión de Familia Pérez" class="testimonial-avatar">
+                <div class="testimonial-author">
+                  <h4>Familia Pérez</h4>
+                  <p>Padres de Mariana, 2 años</p>
+                </div>
+              </footer>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial">
+              <p>"El enfoque sostenible de Starlight nos convenció. Además de cuidar a los niños, se ocuparon de prácticas eco-friendly en el evento. Excelente."</p>
+              <footer>
+                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Opinión de Familia Vázquez" class="testimonial-avatar">
+                <div class="testimonial-author">
+                  <h4>Familia Vázquez</h4>
+                  <p>Padres de Rafael, 6 años</p>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <!-- Se quita el div de paginación para ocultar puntitos -->
+        <!-- <div class="swiper-pagination"></div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" style="position: relative; overflow: hidden;">
+    <!-- Canvas para animación de estrellas detrás de la sección Contacto -->
+    <canvas id="stars-contact-canvas" aria-hidden="true"></canvas>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-title">
+        <h2>Contáctanos</h2>
+        <p>¿Listo para confiar el cuidado de tus hijos a Starlight? Completa el formulario.</p>
+      </div>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Nombre Completo</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="tu@ejemplo.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Teléfono</label>
+          <input type="tel" id="phone" name="phone" placeholder="(442) 123 4567" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="5" placeholder="Cuéntanos tus necesidades..." required></textarea>
+        </div>
+        <button type="submit">Solicitar Información</button>
+        <p id="formMsg" aria-live="polite"></p>
+      </form>
+      <!-- Se elimina la info de correo e Instagram que estaba debajo -->
+      <!-- <div class="contact-info" style="margin-top:20px; color:white; text-align:center;">
+           <p>Correo: ...</p>
+           <p>Instagram: ...</p>
+         </div> -->
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faqs">
+    <div class="container">
+      <div class="section-title">
+        <h2>Preguntas Frecuentes</h2>
+        <p>Aquí respondemos a las dudas más comunes sobre nuestros servicios.</p>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">
+            <span>¿Cómo puedo reservar un servicio con Starlight?</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Puedes reservar completando el formulario en esta página o enviando un correo a <a href="mailto:agencia.starlight64@gmail.com">agencia.starlight64@gmail.com</a>. Nuestro equipo te contactará en menos de 24 horas para coordinar todos los detalles.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">
+            <span>¿Cuáles son las tarifas y métodos de pago?</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Las tarifas varían según el servicio y horario. Consulta la sección de Horarios y Costos. Aceptamos transferencias bancarias, pagos con tarjeta o efectivo según acuerdo previo. En eventos, se solicita un depósito de confirmación.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">
+            <span>¿Ofrecen servicio de emergencia o cambios de última hora?</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, tenemos un servicio de emergencia 24/7 con tiempo de respuesta rápido en Querétaro y zona metropolitana. Puede aplicar un cargo adicional según la urgencia. Contáctanos inmediatamente vía WhatsApp o correo para coordinar.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">
+            <span>¿Qué medidas de seguridad y salud siguen las niñeras y puericultistas?</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Nuestro personal pasa por selección rigurosa, verificación de antecedentes y certificaciones en primeros auxilios. Seguimos protocolos sanitarios (higiene, uso de gel, mascarillas cuando se requiera). En eventos, trabajamos bajo normativas de bioseguridad vigentes.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">
+            <span>¿Puedo cambiar o cancelar una reserva?</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, puedes modificar o cancelar con al menos 24 horas de anticipación sin costo adicional. Para cambios de última hora o emergencias, revisa nuestra política y contáctanos para evaluar la viabilidad.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">
+            <span>¿Ofrecen planes de cuidado a largo plazo o recurrente?</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Ofrecemos paquetes mensuales o semanales personalizados para cuidado regular o acompañamiento en actividades. Incluyen seguimiento del desarrollo y reuniones periódicas con los padres.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <span>Starlight</span>
+        </div>
+        <p>Brillante cuidado infantil con un enfoque sostenible y de confianza.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Inicio</a>
+        <a href="#quienes">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#precios">Precios</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#faqs">FAQs</a>
+      </div>
+      <div class="social-icons">
+        <a href="mailto:agencia.starlight64@gmail.com" aria-label="Correo electrónico"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <a href="https://instagram.com/starlight.64" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      </div>
+      <div class="footer-address" style="color: rgba(255,255,255,0.8);">
+        <p>Oficinas: Antioquía 2-A, Altos Fracc. Misión de Sta Sofía, 76902 Santiago de Querétaro, Qro.</p>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Starlight. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts propios -->
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</body>
+</html>
